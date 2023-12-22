@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:80
+    environment:
+      - CLAMD_IP=clamav
+      - CLAMD_PORT=3310
+      - CLAMD_TIMEOUT=30000
