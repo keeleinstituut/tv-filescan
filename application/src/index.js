@@ -17,6 +17,7 @@ async function main() {
         });
     } catch (e) {
         console.log(e.message)
+        throw e
     }
 }
 
