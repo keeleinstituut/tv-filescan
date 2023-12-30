@@ -2,7 +2,7 @@
   "name": "tv-filescan",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/temporary.js",
     "dev": "NODE_ENV=development nodemon --exec yarn start",
     "test": "jest --detectOpenHandles"
   },
