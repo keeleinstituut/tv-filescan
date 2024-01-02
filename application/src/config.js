@@ -1,6 +1,6 @@
 const DEFAULT_MAX_FILE_SIZE = 1024 * 1024 * 25; // 25 MB
 const avConfig = {
-  debugMode: false,
+  debugMode: process.env.NODE_ENV === 'development',
   preference: 'clamdscan',
   clamdscan: {
     host: process.env.CLAMD_IP || '127.0.0.1',
