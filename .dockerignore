@@ -14,3 +14,9 @@
 /application/Homestead.yaml
 /application/npm-debug.log
 /application/yarn-error.log
+
+# Test files and coverage
+/application/coverage/
+/application/tests/
+/application/jest.config.js
+
