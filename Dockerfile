@@ -8,9 +8,16 @@ ENV APP_PORT 80
 RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
 
-COPY --chown=www-data:www-data ./application ${APP_ROOT}
+COPY ./application/package.json ./application/yarn.lock ./
 
-RUN yarn install
+RUN yarn install --production
+
+COPY ./application .
+
+RUN chown -R root:root ${APP_ROOT} && \
+    chmod -R 755 ${APP_ROOT}
+
+USER node
 
 CMD yarn start
 EXPOSE ${APP_PORT}
