@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ quiet: true })
 
 const config = require('./config')
 const { makeServer } = require('./server')
@@ -10,7 +10,11 @@ async function main() {
     try {
         const server = await makeServer(config)
 
-        server.listen(PORT, () => {
+        server.listen(PORT, (error) => {
+            if (error) {
+                console.error('Server failed to start:', error);
+                process.exit(1);
+            }
             if (process.env.NODE_ENV !== 'test') {
                 console.log(`Server started on PORT: ${PORT}`);
             }

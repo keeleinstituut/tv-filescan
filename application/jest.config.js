@@ -1,6 +1,7 @@
 const path = require('path');
 require('dotenv').config({
   path: path.resolve(__dirname, 'tests/test.env'),
+  quiet: true,
 });
 
 module.exports = {
