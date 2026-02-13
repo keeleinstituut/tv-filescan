@@ -1,7 +1,5 @@
-version: "3.8"
-
 services:
   clamav:
-    image: clamav/clamav:1.2.1
+    image: clamav/clamav:stable
     environment:
       - CLAMAV_NO_FRESHCLAMD=true
