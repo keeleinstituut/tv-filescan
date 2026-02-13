@@ -4,7 +4,6 @@ const express = require('express');
 const morgan = require('morgan');
 const fileUpload = require('express-fileupload');
 const router = require('./routes')
-// const bodyParser = require('body-parser');
 
 async function makeServer(cfg) {
   let clamscan;
@@ -18,8 +17,6 @@ async function makeServer(cfg) {
   const app = express();
 
   app.use(cors());
-  // app.use(bodyParser.json());
-  // app.use(bodyParser.urlencoded({ extended: true }));
   app.use((req, res, next) => {
     req._av = clamscan;
     next();
@@ -33,7 +30,7 @@ async function makeServer(cfg) {
 
   app.use(router)
 
-  app.all('*', (req, res, next) => {
+  app.all('/{*splat}', (req, res, next) => {
     res.status(405).json({ success: false, data: { error: 'Not allowed.' } });
   });
 

@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.4.0
 
-FROM node:20.10.0-alpine3.19
+FROM node:20.19.6-alpine3.23
 
 ENV APP_ROOT /app
 ENV APP_PORT 80

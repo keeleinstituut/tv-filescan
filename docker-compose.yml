@@ -1,5 +1,5 @@
 services:
   clamav:
-    image: clamav/clamav:stable
+    image: clamav/clamav:1.2
     environment:
       - CLAMAV_NO_FRESHCLAMD=true
